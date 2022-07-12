@@ -1,0 +1,27 @@
+@charset "UTF-8";
+*{margin: 0;}
+@font-face {
+    font-family: 'HS-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+header{text-align: center; background-color: aqua; width: 80%; height: 100px; 
+		color: #4a359f; font-size: 40pt; font-weight: bolder; padding: 50px, 0; font-family: 'HS-Regular'}
+#nav{background-color: gray; height: 60px; width: 80%;}
+#nav ul{list-style: none;}
+#nav ul li{float: left; line-height: 30px; text-align: center; 
+			width: 200px; background-color: gray;}
+#nav ul li a {text-decoration: none; color: white; padding: 15px; display: block;}
+#nav input{text-align: center; width: 100px; margin: 15px; }
+#nav ul li:hover {background-color: pink; height: 60px;}
+#nav ul li a:visited { color: white;}
+#lgbtn{ width: 50px; border-radius: 5px; border-color: skyblue;}
+#lgbtn:hover{background-color: skyblue; color: white; border-color: white;}
+#remotenav{position: fixed; border: 1px solid black; width: 9.9%; height: 100px;}
+#remotenav ul{list-style:none;}
+#section{width:80%; height: 1000px; background-color: orange;}
+
+
+/* 
+footer{} */
