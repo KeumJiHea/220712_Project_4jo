@@ -8,10 +8,8 @@
 <link href="BasicCSS.css" rel="stylesheet">
 </head>
 <body>
-<div align="center">
-	<header>Web Page 입니다</header>
-</div>
-<div align="center">
+<div class="header" align="center">
+	<header>WebPage 입니다</header>
 	<form>
 	<nav id="nav">
 		<ul>
