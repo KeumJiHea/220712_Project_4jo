@@ -13,9 +13,9 @@
 	<div id="navdiv" align="center">
 		<nav id="nav">
 			<ul>
-				<li><a href="/220712_Project_4jo/index.jsp">Home</a></li>
-				<li><a href="/220712_Project_4jo/member/register.jsp">Join</a></li>				
-				<li><a href="#">Board</a></li>				
+				<li><a href="/220712_Project_4jo/index.jsp">Home <span class="aspan">홈으로가기</span></a></li>
+				<li><a href="/220712_Project_4jo/member/register.jsp">Join <span class="aspan">회원가입</span></a></li>				
+				<li><a href="#">Board <span class="aspan">게시판</span></a></li>				
 			</ul>
 		</nav>
 			<nav id="infonav">
