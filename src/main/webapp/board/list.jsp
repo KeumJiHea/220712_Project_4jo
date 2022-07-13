@@ -15,7 +15,7 @@
 <table border="1">
 <tr>
 <th>번호</th> <th>이름 </th> <th>제목 </th> <th>날짜 </th> <th> 조회수</th>
-<th>group </th> <th>step </th> <th> indent</th>
+<!--  <th>group </th> <th>step </th> <th> indent</th> -->
 </tr>
 
 <c:forEach var="dto" items="${dao.list()}">
@@ -25,17 +25,17 @@
  <td>${dto.name } </td>
 
  <td>
- <c:forEach begin="1" end="${dto.indent }">-></c:forEach>
+ <c:forEach begin="1" end="${dto.indent }">↳</c:forEach>
 <a href="content.jsp?id=${dto.id }">
  ${dto.title }</a>
  </td> 
 
 <td>${dto.savedate } </td> 
 <td>${dto.hit } </td>
-
+<!-- 
 <td>${dto.idgroup } </td> 
 <td>${dto.step} </td>
- <td>${dto.indent } </td> 
+ <td>${dto.indent } </td>  -->
 </tr>
 </c:forEach>
 <tr>

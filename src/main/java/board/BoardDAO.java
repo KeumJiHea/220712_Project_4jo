@@ -22,7 +22,7 @@ public BoardDAO(){
 public ArrayList<BoardDTO> list(){
 	ArrayList<BoardDTO> li = new ArrayList<BoardDTO>();
 	
-	String sql = "select * from board_table";
+	String sql = "select * from board_table order by idgroup desc,step asc";
 	
 	try {
 		ps= con.prepareStatement(sql);
@@ -77,7 +77,22 @@ public void insert(String name, String title, String content) {
 	}
 }
 
+private void upHit(String id) {
+	String sql = "update board_table set hit=hit+1 where id="+id;
+	
+	try {
+		ps = con.prepareStatement(sql);
+		
+		ps.executeUpdate();
+	} catch (Exception e) {
+		e.printStackTrace();
+		
+	}
+}
+
+
 public BoardDTO getContent(String id) {
+	upHit(id);
 	String sql = "select * from board_table where id="+id;
 	
 	try {
@@ -124,6 +139,43 @@ public void update(BoardDTO dto) {
 	
 }
 
+public void replyshap(BoardDTO dto) {
+	String sql = "update board_table set step=step+1 where idgroup=? and step> ?";
+	
+	try {
+		ps = con.prepareStatement(sql);
+		
+		ps.setInt(1, dto.getIdgroup());
+		ps.setInt(2, dto.getStep());
+		
+		ps.executeUpdate();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+
+
+public void reply(BoardDTO dto) {
+	replyshap(dto);
+	
+	String sql = "insert into board_table(id,name,title,content,idgroup,step,indent)"+
+			"values(test_board_seq.nextval,?,?,?,?,?,?)";
+	
+	try {
+		ps = con.prepareStatement(sql);
+		ps.setString(1, dto.getName());
+		ps.setString(2, dto.getTitle());
+		ps.setString(3, dto.getContent());
+		
+		ps.setInt(4, dto.getIdgroup());
+		ps.setInt(5, dto.getStep()+1);
+		ps.setInt(6, dto.getIndent()+1);
+		
+		ps.executeUpdate();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
 
 
 }

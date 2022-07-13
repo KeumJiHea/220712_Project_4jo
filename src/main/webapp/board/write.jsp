@@ -29,7 +29,7 @@
 <tr>
 	<th>내용</th>
 	<td>
-	<textarea ></textarea>
+	<textarea name="content"></textarea>
 	</td>
 </tr>
 
