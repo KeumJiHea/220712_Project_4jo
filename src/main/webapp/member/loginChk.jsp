@@ -9,6 +9,7 @@
 </head>
 <body>
 	<jsp:useBean id="dao" class="member.MemberDAO"/>
+	<jsp:useBean id="dto" class="member.MemberDTO"/>
 	
 	<c:set var="userId" value="${param.id }"/>
 	<c:set var="userPwd" value="${param.pwd }"/>
@@ -18,19 +19,20 @@
 		<c:when test="${result==1 }">
 			<script type="text/javascript">
 				alert('로그인 성공')
-				location.href="main.jsp"
+				<%session.setAttribute("id", request.getParameter("id")); %>
+				location.href="../index.jsp"
 			</script>
 		</c:when>
 		<c:when test="${result==0 }">
 			<script type="text/javascript">
 				alert('존재하지 않는 아이디입니다.')
-				location.href="login.jsp"
+				location.href="../index.jsp"
 			</script>
 		</c:when>
 		<c:when test="${result==-1 }">
 			<script type="text/javascript">
 				alert('잘못된 비밀번호입니다.')
-				location.href="login.jsp"
+				location.href="../index.jsp"
 			</script>
 		</c:when>
 	</c:choose>
