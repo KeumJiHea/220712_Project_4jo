@@ -15,7 +15,7 @@
 <table border="1">
 <tr>
 <th>번호</th> <th>이름 </th> <th>제목 </th> <th>날짜 </th> <th> 조회수</th>
-<th>idgroup </th> <th>step </th> <th> indent</th>
+<th>group </th> <th>step </th> <th> indent</th>
 </tr>
 
 <c:forEach var="dto" items="${dao.list()}">
