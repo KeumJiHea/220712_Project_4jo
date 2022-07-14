@@ -89,7 +89,7 @@ section{margin:auto; width:80%; height: 1000px; background-color: orange; text-a
 #writetbl td{text-align: center;}
 #writetbl input{width: 50%; height:30px; text-align: center;}
 #writetbl textarea{width: 50%; height: 150px;}
-#writebtd{display: flex;}
+#writebtd{display: flex; margin-left: 155px;}
 #bodtbl{width: 80%; height: auto; text-align: center;}
 #contendiv{padding-top: 60px;}
 #replydiv{padding-top: 60px;}

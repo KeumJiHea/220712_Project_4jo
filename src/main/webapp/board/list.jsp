@@ -43,18 +43,14 @@
 
 <td>${dto.savedate } </td> 
 <td>${dto.hit } </td>
-<!-- 
-<td>${dto.idgroup } </td> 
-<td>${dto.step} </td>
- <td>${dto.indent } </td>  -->
 </tr>
 </c:forEach>
 </c:otherwise>
 </c:choose>
+</table>
 
 
-<tr>
-<td id="writebtd" colspan="5">
+<span id="writebtd">
 <button id="listbt"type="button" onclick="location.href='write.jsp'">글쓰기</button>
 <c:choose>
 	<c:when test="${param.start == null }">
@@ -93,10 +89,8 @@
 	<button disabled>다음</button>
 </c:otherwise>
 </c:choose>
-<!--|${s} / ${pc.totEndPage }|  -->
 </div>
-</tr>
-</table>
+</span>
 </div>
 </section>
 <div align="center">
