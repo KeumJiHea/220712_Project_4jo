@@ -19,13 +19,20 @@ public BoardDAO(){
 	}
 }
 
-public ArrayList<BoardDTO> list(){
+public ArrayList<BoardDTO> list(int start,int end){
+	System.out.println("start : "+start);
+	System.out.println("end : "+end);
 	ArrayList<BoardDTO> li = new ArrayList<BoardDTO>();
-	
-	String sql = "select * from board_table order by idgroup desc,step asc";
-	
+	if(start==0) { start=1; }
+	//String sql = "select * from board_table order by idgroup desc,step asc";
+	String sql = "select B.* from(select rownum rn, A.* from\r\n"
+			+ "(select * from board_table order by id desc)A)B \r\n"
+			+ "where rn between ? and ?";
 	try {
 		ps= con.prepareStatement(sql);
+		ps.setInt(1, start);
+		ps.setInt(2, end);
+		
 		rs= ps.executeQuery();
 		
 		while(rs.next()) {
@@ -157,7 +164,7 @@ public void replyshap(BoardDTO dto) {
 
 public void reply(BoardDTO dto) {
 	replyshap(dto);
-	
+	//네임빼기 <% request.setAttribute("name")%>으로 바꿔서 답변 이름 바꾸기
 	String sql = "insert into board_table(id,name,title,content,idgroup,step,indent)"+
 			"values(test_board_seq.nextval,?,?,?,?,?,?)";
 	
@@ -177,6 +184,46 @@ public void reply(BoardDTO dto) {
 	}
 }
 
+
+public int getTotalPage() {
+	String sql = "select count(*) from board_table";
+	int cnt = 0;
+	
+	try {
+		ps=con.prepareStatement(sql);
+		rs = ps.executeQuery();
+		
+		if(rs.next()) {
+		
+		cnt=rs.getInt(1);
+		
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	return cnt;
+}
+
+
+public PageCount pagingNum(int start) {
+	if(start==0){ start=1;}
+	
+	PageCount pc = new PageCount(); 
+	
+	int pageNum = 5;
+	int totalpage = getTotalPage();
+	int allpage=0;
+	
+	allpage = totalpage/pageNum ;
+	
+	if(totalpage % pageNum != 0 ) { allpage+=1;}
+	
+	pc.setTotEndPage(allpage);
+	pc.setStartPage((start-1)*pageNum +1);
+	pc.setEndPage(pageNum*start);
+	
+	return pc;
+}
 
 }
 

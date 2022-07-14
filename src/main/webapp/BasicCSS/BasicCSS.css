@@ -89,7 +89,7 @@ section{margin:auto; width:80%; height: 1000px; background-color: orange; text-a
 #writetbl td{text-align: center;}
 #writetbl input{width: 50%; height:30px; text-align: center;}
 #writetbl textarea{width: 50%; height: 150px;}
-#writebtd{ text-align: left;}
+#writebtd{display: flex;}
 #bodtbl{width: 80%; height: auto; text-align: center;}
 #contendiv{padding-top: 60px;}
 #replydiv{padding-top: 60px;}
@@ -102,4 +102,6 @@ section{margin:auto; width:80%; height: 1000px; background-color: orange; text-a
 #replytbl input{width: 50%; height:30px; text-align: center;}
 #replytbl textarea{width: 50%; height: 150px;}
 .footdiv{margin:auto; background-color: gray; width: 80%; text-align: center;}
-.clockdiv{border:1px solid #dedede; margin-left:-10px; width:110%; height:50px; line-height:50px; color:#666;font-size:20pt; text-align:center;}
+.clockdiv{border:1px solid #dedede; margin-left:-10px; width:110%; height:50px; 
+line-height:50px; color:#666;font-size:20pt; text-align:center;}
+#pnbtn{text-align: right;}
