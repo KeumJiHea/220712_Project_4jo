@@ -10,5 +10,5 @@ public class DBConnect {
 				"jdbc:oracle:thin:@//localhost:1521/xe","twks0512","hw6297");
 		return con;
 	}
-	
+
 }
