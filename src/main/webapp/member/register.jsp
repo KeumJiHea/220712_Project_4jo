@@ -55,7 +55,7 @@
 <body>
 	<%@include file="header.jsp" %>
 	<%@include file="nav.jsp" %>
-	<section id="regisection">
+	<section>
 	<h3>회원가입</h3>
 		<form name="joinform" action="regChk.jsp" method="post" onsubmit="return nullchk()">
 		<div align="center">
@@ -74,6 +74,8 @@
 		</div>
 		</form>
 	</section>
-	<%@include file="/member/footer.jsp" %>
+	<div align="center">
+<%@include file="/member/footer.jsp" %>
+</div>
 </body>
 </html>

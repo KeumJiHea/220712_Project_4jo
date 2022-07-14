@@ -15,7 +15,7 @@
 			<ul>
 				<li><a href="/220712_Project_4jo/index.jsp">Home <span class="aspan">홈으로가기</span></a></li>
 				<li><a href="/220712_Project_4jo/member/register.jsp">Join <span class="aspan">회원가입</span></a></li>				
-				<li><a href="#">Board <span class="aspan">게시판</span></a></li>				
+				<li><a href="/220712_Project_4jo/board/list.jsp">Board <span class="aspan">게시판</span></a></li>				
 			</ul>
 		</nav>
 			<nav id="infonav">
@@ -38,7 +38,7 @@
 			<div id="sminfo" align="left"><span id="spn"><%= session.getAttribute("id") %>님</span><br> 환영합니다
 				<span id="btspan">										
 					<a href="#" class="button2">MY Info</a>
-					<a href="member/logout.jsp" class="button2">LogOut</a>	
+					<a href="/220712_Project_4jo/member/logout.jsp" class="button2">LogOut</a>	
 				</span>
 			</div>													
 			</nav>

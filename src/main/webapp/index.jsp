@@ -7,13 +7,13 @@
 <title>Insert title here</title>
 <link href="BasicCSS/BasicCSS.css" rel="stylesheet">
 </head>
-<body>
+<body onload="printClock()">
 <%@include file="/member/header.jsp" %>
 <%@include file="/member/nav.jsp" %>
 	
 	<div align="center">
-	<section id="mainsection">
-		<h1>메인페이지 입니다</h1>
+	<section>
+		<h1>메인페이지 입니다</h1>	
 	</section>
 	</div>
 <%@include file="/member/footer.jsp" %>

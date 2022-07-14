@@ -5,17 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="../BasicCSS/BasicCSS.css" rel="stylesheet">
 </head>
-<body>write.jsp<br>
-
+<body>
+	<%@include file="/member/header.jsp" %>
+	<%@include file="/member/nav.jsp" %>
+<section>
 <form action="write_save.jsp" method="post">
-
-<table border="1">
+<div id="writediv"align="center">
+<table id="writetbl" border="1">
 
 <tr>
 	<th> 이름</th>
 	<td>
-	<input type="text" name="name" placeholder="name"> 
+	<input type="text" name="name" value="<%= session.getAttribute("id")%>"> 
 	</td>
 </tr>
 
@@ -35,13 +38,16 @@
 
 <tr>
 <td colspan="2">
-<input type="submit" value="저장">
-<a href="list.jsp">목록이동</a>
+<button type="submit">저장</button>
+<button type="button" onclick="location.href='list.jsp'">목록이동</button>
 </td>
 </tr>
 
 
 </table>
+</div>
 </form>
+</section>
+<%@include file="/member/footer.jsp" %>
 </body>
 </html>
