@@ -22,19 +22,25 @@
 			<%if(session.getAttribute("id")==null){ %>
 			<div id="headerid">
 			<form action="member/loginChk.jsp" method="post">
-				ID <input type="text" name="id">
-				PW <input type="password" name="pwd">
-				<input id="lgbtn" type="submit" value="LogIn">
+				<table>
+				<tr>
+					<td >ID<input id="logid" type="text" name="id"></td>
+					<td rowspan="2"><input id="lgbtn" type="submit" value="LogIn"></td>
+				</tr>
+				<tr>
+					<td>PW<input id="logpw" type="password" name="pwd"></td>					
+				</tr>
+				
+				</table>
 			</form>
 			</div>
 			<%}else{ %>
-			<div id="sminfo" align="left"><%= session.getAttribute("id") %>님 환영합니다</div>
-				<span class="wrap">
-					<span id="infospan">		
-  						<a href="#" class="button2">MY Info</a>
-  						<a href="#" class="button2">LogOut</a>
-					</span>
-				</span>										
+			<div id="sminfo" align="left"><span id="spn"><%= session.getAttribute("id") %>님</span><br> 환영합니다
+				<span id="btspan">										
+					<a href="#" class="button2">MY Info</a>
+					<a href="member/logout.jsp" class="button2">LogOut</a>	
+				</span>
+			</div>													
 			</nav>
 		</div>
 		<%} %>

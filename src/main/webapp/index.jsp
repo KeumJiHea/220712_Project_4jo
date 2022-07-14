@@ -16,5 +16,6 @@
 		<h1>메인페이지 입니다</h1>
 	</section>
 	</div>
+<%@include file="/member/footer.jsp" %>
 </body>
 </html>

@@ -5,25 +5,23 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-@font-face {
+}@font-face {
     font-family: 'ImcreSoojin';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-@font-face {
+}@font-face {
     font-family: 'Vitro_core';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_core.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-@font-face {
+}@font-face {
     font-family: 'LeferiPoint-WhiteObliqueA';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 .header header{text-align: center; background-color: aqua; width: 80%; height: 100px; 
 		color: #4a359f; font-size: 40pt; font-weight: bolder; padding: 50px, 0; font-family: 'HS-Regular'; }
 .header #nav{background-color: gray; height: 60px; width: 60%;  display: flex;}
@@ -42,14 +40,15 @@
 .header #nav ul li a:visited { color: white;}
 .header #nav ul li .aspan{ opacity:0.4; font-size: 15pt; color: white; font-family: 'ImcreSoojin';}
 .header #headerid{font-family: 'Vitro_core';}
-#lgbtn{ width: 50px; border-radius: 5px; border-color: skyblue;}
+#lgbtn{ width: 60px; height:50px; border-radius: 5px; border-color: skyblue;}
 #lgbtn:hover{background-color: skyblue; color: white; border-color: white;}
-#sminfo{ margin: auto; font-family: 'LeferiPoint-WhiteObliqueA'; color: white; font-size: 15pt; padding-top: 15px;}
-#infonav{background-color: gray; height: 60px; width: 18.9%; padding-left: 10%; padding-right: -5%; display: flex;}
+#sminfo{margin-left:-65px; font-family: 'LeferiPoint-WhiteObliqueA'; color: white; font-size: 15pt; padding-top: 3px;display: flex;}
+#infonav{background-color: gray; height: 60px; width: 18.9%; padding-left: 10%; padding-right: -5%;}
 #infoul{list-style: none;}
 #infoul li{float: left;}
 #navdiv{display: flex; margin-left: 10%;}
-
+#logid{margin-left:10px; width: 100px;}
+#logpw{ margin-left: 1px; width: 100px;}
 
 #remotenav{position: fixed; border: 1px solid black; width: 9.9%; height: 100px;
 border-radius: 10px; background-color: #d99cb1;}
@@ -57,10 +56,9 @@ border-radius: 10px; background-color: #d99cb1;}
 #mainsection{width:80%; height: 1000px; background-color: orange; text-align: center;}
 #regisection{margin:auto; width:80%; height: 1000px; background-color: orange; text-align: center;}
 #regibtn{text-align: center; }
-
-
-#infospan{display: flex;}
-#infospan a {
+#btspan{display: flex; margin-left: 60px;}
+#spn{border: 1px solid black; border-radius:3px; margin-top: 0px; padding-left: 7px; margin-bottom: auto;}
+#sminfo a {
 	overflow:hidden;
 	-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
 	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
@@ -68,21 +66,19 @@ border-radius: 10px; background-color: #d99cb1;}
 	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
 	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
 	display: block;
-	margin:0, auto;
 	max-width: 180px;
 	text-decoration: none;
-	border-radius: 4px;
+	border-radius: 43px;
 	border-color: green;
-	padding: 10px 15px;
+	padding: 18px 15px;
 	font-size: 10pt;
 }
-#infospan a.button2 {
+#sminfo a.button2 {
 	color: white;
 	box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
 }
-#infospan a.button2:hover {
+#sminfo a.button2:hover {
 	color: aqua;
 	box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
 }
-/* 
-footer{} */
+.footdiv{ background-color: gray; width: 80%;}

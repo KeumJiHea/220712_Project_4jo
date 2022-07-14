@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%session.invalidate(); 
-		response.sendRedirect("/220712_Project_4jo/index.jsp");
-	%>
+	<div class="footdiv" align="center">
+		<footer>푸터입니다 푸터 푸푸터 푸푸푸터 푸푸푸푸터 푸푸푸푸푸터 푸푸푸푸푸푸터 푸푸푸푸푸푸푸터</footer>	
+	</div>
 </body>
 </html>
