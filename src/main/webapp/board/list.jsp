@@ -48,7 +48,7 @@
  </c:choose>
  </td> 
 
-<td><fmt:formatDate pattern = "yy/MM/dd hh:mm:ss" value="${dto.savedate}"/> </td>  
+<td><fmt:formatDate pattern = "yy/MM/dd HH:mm:ss" value="${dto.savedate}"/> </td>  
 <td>${dto.hit } </td>
 </tr>
 </c:forEach>
