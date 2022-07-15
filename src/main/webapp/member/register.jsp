@@ -52,9 +52,11 @@
 </script>
 
 </head>
-<body>
+<body onload="printClock()">
 	<%@include file="header.jsp" %>
-	<%@include file="nav.jsp" %>
+	
+	<%@include file="/member/nav.jsp" %><br>
+	
 	<section>
 	<h3>회원가입</h3>
 		<form name="joinform" action="regChk.jsp" method="post" onsubmit="return nullchk()">

@@ -9,13 +9,10 @@
 </head>
 <body onload="printClock()">
 <%@include file="/member/header.jsp" %>
-<%@include file="/member/nav.jsp" %>
-	
-	<div align="center">
+<%@include file="/member/nav.jsp" %><br>		
 	<section>
 		<h1>메인페이지 입니다</h1>	
 	</section>
-	</div>
 <%@include file="/member/footer.jsp" %>
 </body>
 </html>

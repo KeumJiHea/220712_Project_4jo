@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 <link href="../BasicCSS/BasicCSS.css" rel="stylesheet">
 </head>
-<body>
+<body onload="printClock()">
 <%@include file="/member/header.jsp" %>
-	<%@include file="/member/nav.jsp" %>
+<%@include file="/member/nav.jsp" %><br>
 	<section>
 	<div id="replydiv" align="center">
 <jsp:useBean id="dao" class="board.BoardDAO" />

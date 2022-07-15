@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 <link href="../BasicCSS/BasicCSS.css" rel="stylesheet">
 </head>
-<body>
+<body onload="printClock()">
 <%@include file="/member/header.jsp" %>
-<%@include file="/member/nav.jsp" %>
+<%@include file="/member/nav.jsp" %><br>
 <section>
 <div id="contendiv" align="center">
 <jsp:useBean id="dao" class="board.BoardDAO" />
@@ -19,7 +19,7 @@
 <form action="modify.jsp" method="post">
 <input type="hidden" name="id" value="${dto.id }">
 
-<table id="conttbl" border="1">
+<table id="contenttbl" border="1">
 <tr>
 <td>번호</td><td>${dto.id }</td>
 </tr>

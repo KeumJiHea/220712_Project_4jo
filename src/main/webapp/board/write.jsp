@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 <link href="../BasicCSS/BasicCSS.css" rel="stylesheet">
 </head>
-<body>
+<body onload="printClock()">
 	<%@include file="/member/header.jsp" %>
-	<%@include file="/member/nav.jsp" %>
+	<%@include file="/member/nav.jsp" %><br>
 <section>
 <form action="write_save.jsp" method="post">
 <div id="writediv"align="center">

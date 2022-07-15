@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="/BasicCSS/BasicCSS.css" rel="stylesheet">
 <script type="text/javascript">
 function printClock() {
     
@@ -25,7 +24,7 @@ function printClock() {
     if(currentSeconds >= 50){// 50초 이상일 때 색을 변환해 준다.
        currentSeconds = '<span style="color:#de1951;">'+currentSeconds+'</span>'
     }
-    clock.innerHTML = currentHours+":"+currentMinute+":"+currentSeconds +"<span style='font-size:10pt;'>"+ amPm+"</span>"; //날짜를 출력해 줌
+    clock.innerHTML ="<span style='font-size:10pt;'>"+ amPm+"</span>"+ currentHours+":"+currentMinute+":"+currentSeconds; //날짜를 출력해 줌
     setTimeout("printClock()",1000);         // 1초마다 printClock() 함수 호출
 }
 
@@ -41,25 +40,47 @@ function addZeros(num, digit) { // 자릿수 맞춰주기
 }
 </script>
 </head>
-<body onload="printClock()">
-	<nav id="remotenav">
-		<ul>
-			<li>접속중인 회원</li>
-			<li><hr></li>
-			<%if(session.getAttribute("id")==null){ %>
-			<li>로그인을</li>
-			<li>해주세요</li>
-			<%}else{ %>
-			<li><%= session.getAttribute("id") %>님</li>
-			<%} %>			
-			<li>
-				<div class="clockdiv" id="clock">1</div>
-       	 	</li>
-
-		
-		</ul>
-	</nav>
-	
+<body>	
+		<nav class="nav">
+			<ul id="ul1">
+				<li><a href="/220712_Project_4jo/index.jsp">Home <span class="aspan">홈으로가기</span></a></li>
+				<li><a href="/220712_Project_4jo/member/register.jsp">Join <span class="aspan">회원가입</span></a></li>				
+				<li><a href="/220712_Project_4jo/board/list.jsp">Board <span class="aspan">게시판</span></a></li>							
+			</ul>
+			<ul id="ul2">
+			
+				<%if(session.getAttribute("id")==null){ %>
+				<li id="loginli">
+					<form action="/220712_Project_4jo/member/loginChk.jsp">
+						<table>
+							<tr>
+								<td>ID</td>
+								<td>
+									<input type="text" name="id">
+								</td>
+								<td rowspan="2">
+									<button>로그인</button>
+								</td>
+							<tr>
+								<td>PW</td>
+								<td>
+									<input type="password" name="pwd">
+								</td>
+							</tr>							
+						</table>
+					</form>
+				</li>
+				
+				
+				<%}else{ %>
+				<li><span id="spn"><%= session.getAttribute("id") %>님</span><br> 환영합니다
+						<div id="navbtn2">
+						<button type="button" onclick="location.href='#'">MY Info</button>
+						<button type="button" onclick="location.href='/220712_Project_4jo/member/logout.jsp'">LogOut</button></div></li>
+			<%} %>
+				<li id="clockli"><div class="clockdiv" id="clock"></div></li>		
+						
+			</ul>
+			</nav>
 </body>
-
 </html>
