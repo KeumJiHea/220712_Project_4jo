@@ -41,8 +41,8 @@
 <tr>
 <td colspan="2">
 <input type="submit" value="수정">
+<a href="delete.jsp?id=${dto.id }">삭제</a> 
 <a href="list.jsp">목록보기</a>
-<a href="delete.jsp?id=${dto.id }">삭제</a>
 <a href="reply.jsp?id=${dto.id }">답변</a>
 </td>
 </tr>

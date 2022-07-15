@@ -74,7 +74,7 @@
 
 <c:forEach var="cnt" begin="1" end="${pc.totEndPage }" step="1">
 		<a href="list.jsp?start=${cnt }">	
-			${cnt}  
+			[${cnt}]  
 		</a>
 	</c:forEach>
 	
