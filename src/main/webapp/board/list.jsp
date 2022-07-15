@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,11 +33,12 @@
  <td>${dto.name } </td>
 
  <td>
- <c:forEach begin="1" end="${dto.indent }">↳ </c:forEach>
+ <c:forEach begin="1" end="${dto.indent }">
+ <a href="content.jsp?id=${dto.id }"> re: </a> </c:forEach>
 <a href="content.jsp?id=${dto.id }"> ${dto.title }</a>
  </td> 
 
-<td>${dto.savedate } </td> 
+<td><fmt:formatDate pattern = "yy/MM/dd kk:mm:ss" value="${dto.savedate}"/> </td> 
 <td>${dto.hit } </td>
 
 <td>${dto.idgroup } </td> 
