@@ -25,9 +25,9 @@ public ArrayList<BoardDTO> list(int start,int end){
 	ArrayList<BoardDTO> li = new ArrayList<BoardDTO>();
 	if(start==0) { start=1; }
 	//String sql = "select * from board_table order by idgroup desc,step asc";
-	String sql = "select B.* from(select rownum rn, A.* from\r\n"
-			+ "(select * from board_table order by id desc)A)B \r\n"
-			+ "where rn between ? and ?order by idgroup desc,step asc";
+	String sql = "select B.* from( select rownum rn, A.* from ("
+			+ "select * from board_table order by idgroup desc, step asc)A)"
+			+ "B where rn between ? and ? order by idgroup desc,step asc";
 	try {
 		ps= con.prepareStatement(sql);
 		ps.setInt(1, start);

@@ -17,7 +17,7 @@
 <table border="1">
 <tr>
 <th>번호</th> <th>이름 </th> <th>제목 </th> <th>날짜 </th> <th> 조회수</th>
-<!--  <th>group </th> <th>step </th> <th> indent</th> -->
+	<th>group </th> <th>step </th> <th> indent</th> 
 </tr>
 <c:choose>
 <c:when test="${list.size()==0 }">
@@ -38,10 +38,10 @@
 
 <td>${dto.savedate } </td> 
 <td>${dto.hit } </td>
-<!-- 
+
 <td>${dto.idgroup } </td> 
 <td>${dto.step} </td>
- <td>${dto.indent } </td>  -->
+ <td>${dto.indent } </td>  
 </tr>
 </c:forEach>
 </c:otherwise>
