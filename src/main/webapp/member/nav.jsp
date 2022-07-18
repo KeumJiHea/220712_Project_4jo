@@ -73,7 +73,7 @@ function addZeros(num, digit) { // 자릿수 맞춰주기
 				
 				
 				<%}else{ %>
-				<li><span id="spn"><%= session.getAttribute("id") %>님</span><br> 환영합니다
+				<li><div id="username"><span id="spn"><%= session.getAttribute("id") %>님</span><br> 환영합니다</div>
 						<div id="navbtn2">
 						<button type="button" onclick="location.href='#'">MY Info</button>
 						<button type="button" onclick="location.href='/220712_Project_4jo/member/logout.jsp'">LogOut</button></div></li>
