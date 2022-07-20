@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<% request.setCharacterEncoding("UTF-8"); %>
 	<jsp:useBean id="dao" class="member.MemberDAO"/>
 	<jsp:useBean id="dto" class="member.MemberDTO"/>
 	<jsp:setProperty property="*" name="dto"/>

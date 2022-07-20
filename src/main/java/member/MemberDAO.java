@@ -64,4 +64,23 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	
+	public String getName(String userId) {
+		String sql = "select name from member where id=?";
+		String name = null;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				name = rs.getString("name");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.print(name);
+		return name;
+	}
 }

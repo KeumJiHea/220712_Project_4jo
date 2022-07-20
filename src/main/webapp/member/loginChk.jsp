@@ -16,8 +16,14 @@
 	
 	<c:choose>
 		<c:when test="${result==1 }">
+			<% 
+			String userId = request.getParameter("id");
+			String userName = dao.getName(userId);
+			session.setAttribute("name", userName);
+			%>
+			<c:set var="userName" value = "${dao.getName(userId) }"/>
 			<script type="text/javascript">
-				alert('로그인 성공')
+				alert('${userName }님 환영합니다.')
 				location.href="main.jsp"
 			</script>
 		</c:when>
