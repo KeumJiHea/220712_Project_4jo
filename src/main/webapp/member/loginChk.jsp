@@ -22,6 +22,7 @@
 				session.setAttribute("name", userName );
 			%>
 			<script type="text/javascript">				
+				<%session.setAttribute("id", request.getParameter("id")); %>
 				location.href="../index.jsp"
 				alert("로그인 성공!!\n${sessionScope.name }님 환영합니다.")
 				location.href="../index.jsp"

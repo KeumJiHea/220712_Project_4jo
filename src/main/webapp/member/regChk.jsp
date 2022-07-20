@@ -17,7 +17,7 @@
 		<c:when test="${dao.register(dto)==1 }">
 			<script type="text/javascript">
 				alert('가입이 완료되었습니다.')
-				location.href="main.jsp"
+				location.href="../index.jsp"
 			</script>
 		</c:when>
 		<c:otherwise>
