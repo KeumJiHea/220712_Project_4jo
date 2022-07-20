@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="../BasicCSS/BasicCSS.css" rel="stylesheet">
 <jsp:useBean id="dao" class="member.MemberDAO"/>
 <script type="text/javascript">
 	function pwdChk(){
@@ -51,20 +52,32 @@
 </script>
 
 </head>
-<body>
+<body onload="printClock()">
+	<%@include file="header.jsp" %>
 	
+	<%@include file="/member/nav.jsp" %><br>
+	
+	<section>
 	<h3>회원가입</h3>
-	
-	<form name="joinform" action="regChk.jsp" method="post" onsubmit="return nullchk()">
-		* 표시가 있는 항목은 필수 항목입니다.<br>
-		*아이디 <input name="id" id="id"><br>
-		*비밀번호 <input type="password" name="pwd" id="pwd"><br>
-		*비밀번호 확인<input type="password" name="pwdchk" id="pwdchk" onchange="pwdChk()"><span id="pwdchkspan"></span><br>
-		*이름 <input name="name" id="name"><br>
-		주소 <input name="addr" id="addr"><br>
-		전화번호 <input name="tel" id="tel" placeholder="ex) 01012345678"><br>
-		<input type="submit" value="가입">
-		<input type="reset" value="취소">
-	</form>
+		<form name="joinform" action="regChk.jsp" method="post" onsubmit="return nullchk()">
+		<div align="center">
+		<table>
+			<tr><td colspan="2">* 표시가 있는 항목은 필수 항목입니다.</td></tr>
+			<tr><td>*아이디</td> <td><input name="id" id="id"></td></tr>
+			<tr><td>*비밀번호</td> <td><input type="password" name="pwd" id="pwd"></td></tr>
+			<tr><td>*비밀번호 확인</td> <td><input type="password" name="pwdchk" id="pwdchk" onchange="pwdChk()"></td></tr>
+			<tr><td>*이름</td> <td><input name="name" id="name"></td></tr>
+			<tr><td>주소</td> <td><input name="addr" id="addr"></td></tr>
+			<tr><td>전화번호</td> <td><input name="tel" id="tel" placeholder="ex) 01012345678"></td></tr>			
+			<tr><td colspan="2"><span id="pwdchkspan"></span></td></tr>			
+			<tr><td colspan="2" id="regibtn"><input type="submit" value="가입">
+			<input type="reset" value="취소"></td></tr>
+		</table>
+		</div>
+		</form>
+	</section>
+	<div align="center">
+<%@include file="/member/footer.jsp" %>
+</div>
 </body>
 </html>

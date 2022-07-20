@@ -3,6 +3,7 @@ package member;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import DBPKG.DBConnect;
 
@@ -84,4 +85,71 @@ public class MemberDAO {
 		return name;
 	}
 
+	public MemberDTO getUser(String name) {
+		MemberDTO dto = null;
+		String sql = "select * from member where name=?";
+		
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, name);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				dto = new MemberDTO();
+				
+				dto.setId(rs.getString("id"));
+				dto.setPwd(rs.getString("pwd"));
+				dto.setName(rs.getString("name"));
+				dto.setAddr(rs.getString("addr"));
+				dto.setTel(rs.getString("tel"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return dto;
+	}
+
+	public int modify(MemberDTO dto) {
+		String sql = "update member set pwd=?, name=?, addr=?, tel=? where id=?";
+		int result = 0;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getPwd());
+			ps.setString(2, dto.getName());
+			ps.setString(3, dto.getAddr());
+			ps.setString(4, dto.getTel());
+			ps.setString(5, dto.getId());
+			result = ps.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public ArrayList<MemberDTO> getAll() {
+		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+		String sql = "select * from member";
+		
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				MemberDTO dto = new MemberDTO();
+				dto.setId(rs.getString("id"));
+				dto.setPwd(rs.getString("pwd"));
+				dto.setName(rs.getString("name"));
+				dto.setAddr(rs.getString("addr"));
+				dto.setTel(rs.getString("tel"));
+				list.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 }
