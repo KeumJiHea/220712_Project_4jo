@@ -16,7 +16,6 @@
 	
 	<c:choose>
 		<c:when test="${result==1 }">
-			
 			<%
 				String userName = dao.getName(request.getParameter("id"));	
 				session.setAttribute("name", userName );

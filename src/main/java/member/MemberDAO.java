@@ -67,7 +67,7 @@ public class MemberDAO {
 	public String getName(String userId) {
 		String sql = "select name from member where id=?";
 		String name = null;
-		
+
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, userId);
@@ -80,7 +80,8 @@ public class MemberDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 		return name;
 	}
-	
+
 }
