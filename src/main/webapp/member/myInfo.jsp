@@ -59,7 +59,7 @@
 		주소 <input name="addr" id="addr" value="${dto.addr }"><br>
 		전화번호 <input name="tel" id="tel" value="${dto.tel }" placeholder="ex) 01012345678"><br>
 		<input type="submit" value="수정">
-		<input type="reset" value="취소">
+		<input type="button" value="뒤로가기" onclick="history.go(-1)">
 	</form>
 </body>
 </html>

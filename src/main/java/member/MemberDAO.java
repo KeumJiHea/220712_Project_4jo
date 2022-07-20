@@ -110,4 +110,22 @@ public class MemberDAO {
 		return dto;
 	}
 
+	public int modify(MemberDTO dto) {
+		String sql = "update member set pwd=?, name=?, addr=?, tel=? where id=?";
+		int result = 0;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getPwd());
+			ps.setString(2, dto.getName());
+			ps.setString(3, dto.getAddr());
+			ps.setString(4, dto.getTel());
+			ps.setString(5, dto.getId());
+			result = ps.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
 }
