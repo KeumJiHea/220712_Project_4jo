@@ -84,7 +84,7 @@ public class MemberDAO {
 
 		return name;
 	}
-	
+
 	public MemberDTO getUser(String name) {
 		MemberDTO dto = null;
 		String sql = "select * from member where name=?";
