@@ -67,8 +67,8 @@ header{font-size: 40pt; display:inline-block; font-family: 'HS-Regular'; margin:
 #replytbl input{ width: 95%; text-align: center; height: 45px; font-size: 20pt;}
 #replytbl textarea{width:500px; height: 400px;}
 
-/* RightSideBar */
-.Rsidebar {border: 1px solid black; border-radius: 3px; width: 300px; height: auto; }
+/* myInfo */
+#infotbl{text-align: center;}
 
 /* footer */
 .footer {width:1100px; height: 70px; text-align: center; margin:auto;}

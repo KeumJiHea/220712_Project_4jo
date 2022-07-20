@@ -9,15 +9,11 @@
 </head>
 <body>
 
-	<%session.invalidate(); 
-		response.sendRedirect("/220712_Project_4jo/index.jsp");
-	%>
-
-
-	<%session.invalidate();%>
 	<script type="text/javascript">
+	<%session.invalidate(); 	
+	%>
 		alert('로그아웃 되었습니다.')
-		location.href = 'login.jsp'
+		location.href = '/220712_Project_4jo/index.jsp'
 	</script>
 	
 </body>

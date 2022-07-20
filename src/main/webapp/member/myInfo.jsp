@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="/220712_Project_4jo/BasicCSS/BasicCSS.css" rel="stylesheet">
 <jsp:useBean id="dao" class="member.MemberDAO"/>
 <jsp:useBean id="dto" class="member.MemberDTO"/>
 <script type="text/javascript">
@@ -47,19 +48,42 @@
 </script>
 
 </head>
-<body>
-	
-	<h3>나의 정보</h3>
+<body onload="printClock()">
+<%@include file="/member/header.jsp" %>
+<%@include file="/member/nav.jsp" %><br>
+<section>
+	<h1>나의 정보</h1>
 	<c:set var="dto" value="${dao.getUser(sessionScope.name) }"/>
 	<form name="modform" action="modChk.jsp" method="post" onsubmit="return nullchk()">
-		아이디 <input name="id" id="id" value="${dto.id }" readonly><br>
-		비밀번호 <input type="password" name="pwd" id="pwd" value="${dto.pwd }"><br>
-		비밀번호 확인<input type="password" name="pwdchk" id="pwdchk" onchange="pwdChk()"><span id="pwdchkspan"></span><br>
-		이름 <input name="name" id="name" value="${dto.name }"><br>
-		주소 <input name="addr" id="addr" value="${dto.addr }"><br>
-		전화번호 <input name="tel" id="tel" value="${dto.tel }" placeholder="ex) 01012345678"><br>
-		<input type="submit" value="수정">
-		<input type="button" value="뒤로가기" onclick="history.go(-1)">
+		<div align="center">
+		<table id="infotbl" border="1">
+		<tr>
+			<td>아이디</td><td><input name="id" id="id" value="${dto.id }" readonly></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td><td><input type="password" name="pwd" id="pwd" value="${dto.pwd }"></td>
+		</tr>
+		<tr>
+			<td>비밀번호 확인</td><td><input type="password" name="pwdchk" id="pwdchk" onchange="pwdChk()"><span id="pwdchkspan"></span></td>
+		</tr>
+		<tr>
+			<td>이름</td><td><input name="name" id="name" value="${dto.name }"></td>
+		</tr>
+		<tr>
+			<td>주소</td><td> <input name="addr" id="addr" value="${dto.addr }"></td>
+		</tr>
+		<tr>
+			<td>전화번호</td><td><input name="tel" id="tel" value="${dto.tel }" placeholder="ex) 01012345678"></td>
+		</tr>
+		 <tr>
+		 	<th colspan="2"><input type="submit" value="수정">			
+			<button type="button" onclick="location.href='/220712_Project_4jo/member/allMember.jsp'">모든 회원보기</button>
+			</th>
+		 </tr>		
+		</table>
+		</div>
 	</form>
+</section>
+<%@include file="/member/footer.jsp" %>	
 </body>
 </html>
