@@ -6,15 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="../BasicCSS/BasicCSS.css" rel="stylesheet">
 </head>
-<body>
+<body onload="printClock()">
+<%@include file="/member/header.jsp" %>
+<%@include file="/member/nav.jsp" %><br>
+<section>
+<div id="contendiv" align="center">
 <jsp:useBean id="dao" class="board.BoardDAO" />
 <c:set var="dto" value="${dao.getContent(param.id) }" />
 
 <form action="modify.jsp" method="post">
 <input type="hidden" name="id" value="${dto.id }">
 
-<table border="1">
+<h1> 게시글 보기 </h1>
+<table id="contenttbl" border="1">
 <tr>
 <td>번호</td><td>${dto.id }</td>
 </tr>
@@ -40,13 +46,20 @@
 
 <tr>
 <td colspan="2">
-<input type="submit" value="수정">
-<a href="delete.jsp?id=${dto.id }">삭제</a> 
-<a href="list.jsp">목록보기</a>
-<a href="reply.jsp?id=${dto.id }">답변</a>
+
+<button type="submit">수정</button>
+<button type="button" onclick="location.href='list.jsp'">목록보기</button>
+<button type="button" onclick="location.href='delete.jsp?id=${dto.id }'">삭제</button>
+<button type="button" onclick="location.href='reply.jsp?id=${dto.id }'">답변</button>
+
 </td>
 </tr>
 </table>
 </form>
+</div>
+</section>
+<div align="center">
+<%@include file="/member/footer.jsp" %>
+</div>
 </body>
 </html>

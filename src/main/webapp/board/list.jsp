@@ -1,3 +1,5 @@
+<%@page import="java.sql.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="board.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -9,13 +11,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="../BasicCSS/BasicCSS.css" rel="stylesheet">
 </head>
-<body>
+<body onload="printClock()">
+<%@include file="/member/header.jsp" %>
+<%@include file="/member/nav.jsp" %><br>
+<section>
+<h1> 게 시 판 </h1>
+<div id="boarddiv" align="center">
  <jsp:useBean id="dao" class="board.BoardDAO" />
 	<c:set var="totalpage" value="${dao.getTotalPage() }" />
 	<c:set var="pc" value="${dao.pagingNum(param.start) }" />
 	<c:set var="list" value="${dao.list(pc.startPage,pc.endPage) }" />
-<table border="1">
+<table id="boardtbl" border="1">
 <tr>
 <th>번호</th> <th>이름 </th> <th>제목 </th> <th>날짜 </th> <th> 조회수</th>
 
@@ -27,34 +35,35 @@
 </c:when>
 
 <c:otherwise>
-<c:forEach var="dto" items="${list }">
+<c:forEach var="dto" items="${list }">    <!-- 버그수정 -->
 <tr>
 
 <td>${dto.id }</td>
  <td>${dto.name } </td>
 
- <td>
- <c:forEach begin="1" end="${dto.indent }">
- <a href="content.jsp?id=${dto.id }"> &nbsp; </a> </c:forEach>
-<a href="content.jsp?id=${dto.id }"> ${dto.title }</a>
+ <td id="titletd">
+ <c:choose>
+ 		<c:when test="${dto.indent }>0">　</c:when>
+ 	<c:otherwise>
+		 <c:forEach begin="1" end="${dto.indent }"><a href="content.jsp?id=${dto.id }"> &nbsp; </a> </c:forEach><a href="content.jsp?id=${dto.id }"> ${dto.title }</a>
+ 	</c:otherwise>	
+ </c:choose>
  </td> 
 
-<td><fmt:formatDate pattern = "yyyy/MM/dd kk:mm:ss" value="${dto.savedate}"/> </td> 
+<td><fmt:formatDate pattern = "yy/MM/dd HH:mm:ss" value="${dto.savedate}"/> </td>  
 <td>${dto.hit } </td>
 
-<!--  
-<td>${dto.idgroup } </td> 
-<td>${dto.step} </td>
- <td>${dto.indent } </td>  -->
 </tr>
 </c:forEach>
 </c:otherwise>
 </c:choose>
+</table>
 
-
-<tr>
-<td colspan="8">
-
+<%if(session.getAttribute("id")==null){ %>
+	<button id="listbt" disabled>글쓰기</button>
+<%}else{ %>
+<button id="listbt"type="button" onclick="location.href='write.jsp'">글쓰기</button>
+<%} %>
 <c:choose>
 	<c:when test="${param.start == null }">
 		<c:set var="s" value="1"/>
@@ -64,7 +73,7 @@
 	</c:otherwise>
 </c:choose>
 
-<!-- 이전 -->
+<!-- 이전버튼 -->
 <input type="button" onclick="location.href='list.jsp?start=1'" value="처음">
 <c:choose>
 	<c:when test="${s > 1 }">
@@ -78,7 +87,7 @@
 
 <c:forEach var="cnt" begin="1" end="${pc.totEndPage }" step="1">
 		<a href="list.jsp?start=${s}">	
-			[${cnt}] <!-- 현재페이지에 다른 색으로 만들기 -->
+			[${cnt}] 
 		</a>
 	</c:forEach>
 
@@ -91,11 +100,16 @@
 	<button disabled>다음</button>
 </c:otherwise>
 </c:choose>
-<!-- 	|${s} / ${pc.totEndPage }| -->
-<a href="write.jsp">글쓰기</a> </td>
-</tr>
-</table>
 
 
+</div>
+<!--  
+</span>
+</div>
+-->
+</section>
+<div align="center">
+<%@include file="/member/footer.jsp" %>
+</div>
 </body>
 </html>

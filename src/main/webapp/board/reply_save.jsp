@@ -13,6 +13,7 @@
 <jsp:setProperty property="*" name="dto"/>
 <jsp:useBean id="dao" class="board.BoardDAO" />
 ${dao.reply(dto) }
+<%dto.setName((String)session.getAttribute("id")); %>
 <% response.sendRedirect("list.jsp"); %>
 </body>
 </html>

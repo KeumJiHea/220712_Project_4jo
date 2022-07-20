@@ -8,4 +8,10 @@
 # Eclipse
 .classpath
 .project
+<<<<<<< HEAD
+.settings
+
+=======
 .settings/
+/깃허브토큰(mini_token).png
+>>>>>>> a9e7cc937dbf14422730586cc100a702c2401c2a
