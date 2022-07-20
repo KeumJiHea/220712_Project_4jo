@@ -13,6 +13,7 @@
 <section>
 <form action="write_save.jsp" method="post">
 <div id="writediv"align="center">
+<h1> 게시글 작성 </h1>
 <table id="writetbl" border="1">
 
 <tr>

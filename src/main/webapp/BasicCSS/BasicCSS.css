@@ -27,7 +27,8 @@ ul{list-style: none;}
 a{text-decoration: none;}
 a:visited{color: black; font-weight: bold;}
 li{display: inline-block;}
-section{margin:auto; margin-top:-21px; width:1100px; height: 800px; background-color:orange; text-align: center;}
+section{margin:auto; margin-top:-21px; width:1100px; height: 800px;text-align: center;}
+
 /* header */
 .header{background-color: aqua; width: 1100px; height: 100px; margin: auto;}
 header{font-size: 40pt; display:inline-block; font-family: 'HS-Regular'; margin: 20px;}
@@ -53,13 +54,22 @@ header{font-size: 40pt; display:inline-block; font-family: 'HS-Regular'; margin:
 
 
 /* board */
+#boarddiv {margin-top: 20px;}
 #boardtbl {width: 800px;}
 #titletd {width: 400px;}
 #writetbl {text-align: center;}
 #writetbl input{ width: 95%; text-align: center; height: 45px; font-size: 20pt;}
 #writetbl textarea{width:500px; height: 400px;}
+#contenttbl{text-align: center;}
 #contenttbl input{width: 95%; text-align: center; height: 30px; font-size: 20pt;}
 #contenttbl textarea{width:500px; height: 400px; font-size: 15pt;}
 #replytbl {text-align: center;}
 #replytbl input{ width: 95%; text-align: center; height: 45px; font-size: 20pt;}
 #replytbl textarea{width:500px; height: 400px;}
+
+/* RightSideBar */
+.Rsidebar {border: 1px solid black; border-radius: 3px; width: 300px; height: auto; }
+
+/* footer */
+.footer {width:1100px; height: 70px; text-align: center; margin:auto;}
+.footer hr {width: auto;}

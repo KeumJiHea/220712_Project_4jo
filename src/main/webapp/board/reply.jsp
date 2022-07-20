@@ -22,7 +22,7 @@
 <input type="hidden" name="step" value="${dto.step }">
 <input type="hidden" name="indent" value="${dto.indent }">
 <input type="hidden" name="name" value="<%=session.getAttribute("id") %>">
-
+<h1> 답글 달기 </h1>
 <table id="replytbl" border="1">
 <tr>
 <td>번호</td><td>${dto.id }</td>

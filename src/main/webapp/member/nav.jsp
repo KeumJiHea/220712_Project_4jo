@@ -78,7 +78,8 @@ function addZeros(num, digit) { // 자릿수 맞춰주기
 						<button type="button" onclick="location.href='#'">MY Info</button>
 						<button type="button" onclick="location.href='/220712_Project_4jo/member/logout.jsp'">LogOut</button></div></li>
 			<%} %>
-				<li id="clockli"><div class="clockdiv" id="clock"></div></li>		
+				<li id="clockli"><div class="clockdiv" id="clock"></div></li>
+						
 						
 			</ul>
 			</nav>

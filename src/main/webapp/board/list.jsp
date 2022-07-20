@@ -17,6 +17,7 @@
 <%@include file="/member/header.jsp" %>
 <%@include file="/member/nav.jsp" %><br>
 <section>
+<h1> 게 시 판 </h1>
 <div id="boarddiv" align="center">
  <jsp:useBean id="dao" class="board.BoardDAO" />
 	<c:set var="totalpage" value="${dao.getTotalPage() }" />

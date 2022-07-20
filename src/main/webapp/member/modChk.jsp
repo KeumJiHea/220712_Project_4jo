@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,20 +13,20 @@
 	<jsp:useBean id="dto" class="member.MemberDTO"/>
 	<jsp:setProperty property="*" name="dto"/>
 	
+	<c:set var="result" value="${dao.modify(dto) }"/>
 	<c:choose>
-		<c:when test="${dao.register(dto)==1 }">
+		<c:when test="${result==1 }">
 			<script type="text/javascript">
-				alert('가입이 완료되었습니다.')
-				location.href="main.jsp"
+				alert('수정이 완료되었습니다.')
+				location.href='myInfo.jsp'
 			</script>
 		</c:when>
 		<c:otherwise>
 			<script type="text/javascript">
-				alert('가입에 실패했습니다.')
-				histoty.go(-1);
+				alert('수정에 실패했습니다.')
+				histoty.go(-1)
 			</script>
 		</c:otherwise>
-	</c:choose> 
-	
+	</c:choose>
 </body>
 </html>

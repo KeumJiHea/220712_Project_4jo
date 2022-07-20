@@ -17,10 +17,17 @@
 	
 	<c:choose>
 		<c:when test="${result==1 }">
+			<%
+				String userName = dao.getName(request.getParameter("id"));	
+				session.setAttribute("name", userName );
+			%>
 			<script type="text/javascript">
+
 				alert('로그인 성공')
 				<%session.setAttribute("id", request.getParameter("id")); %>
 				location.href="../index.jsp"
+				alert("${sessionScope.name }님 환영합니다.")
+				location.href="main.jsp"
 			</script>
 		</c:when>
 		<c:when test="${result==0 }">

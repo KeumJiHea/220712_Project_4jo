@@ -19,6 +19,7 @@
 <form action="modify.jsp" method="post">
 <input type="hidden" name="id" value="${dto.id }">
 
+<h1> 게시글 보기 </h1>
 <table id="contenttbl" border="1">
 <tr>
 <td>번호</td><td>${dto.id }</td>
