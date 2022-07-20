@@ -10,7 +10,7 @@
 <body>
 
 <div class="header" align="center">
-	<header>Web Page 입니다</header>
+	<header>4 JSP Project</header>
 	
 </div>	
 </body>

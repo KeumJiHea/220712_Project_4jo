@@ -14,7 +14,12 @@
 <%@include file="/member/header.jsp" %>
 <%@include file="/member/nav.jsp" %><br>
 	<section>
-		<h1>메인페이지 입니다</h1>			
+		<h1>Main Page</h1>	
+		<div id="img">
+		<img src="/220712_Project_4jo/images/rabbit.jpg" title="KJH">
+		<img src="/220712_Project_4jo/images/shinzzang.jpg" title="KYH">
+		<img src="/220712_Project_4jo/images/fox.jpg" title="BEH">
+		</div>		
 	</section>
 <%@include file="/member/footer.jsp" %>		
 </body>

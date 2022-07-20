@@ -28,6 +28,7 @@ a{text-decoration: none;}
 a:visited{color: black; font-weight: bold;}
 li{display: inline-block;}
 section{margin:auto; margin-top:-21px; width:1100px; height: 800px;text-align: center;}
+section img{width: 300px; height: 190.72px;}
 
 /* header */
 .header{background-color: aqua; width: 1100px; height: 100px; margin: auto;}
@@ -51,6 +52,9 @@ header{font-size: 40pt; display:inline-block; font-family: 'HS-Regular'; margin:
 .nav #ul2 #clockli{margin: 15px; margin-left: 51px;}
 .nav #ul2 #navbtn2{margin: -43px; margin-left: 100px;}
 .aspan{ font-size: 10pt; opacity: 0.6;}
+
+/* section */
+#img{ margin-top: 100px;}
 
 
 /* board */
