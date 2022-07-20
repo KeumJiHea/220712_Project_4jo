@@ -3,6 +3,7 @@ package member;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import DBPKG.DBConnect;
 
@@ -126,6 +127,29 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 		return result;
+	}
+	
+	public ArrayList<MemberDTO> getAll() {
+		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+		String sql = "select * from member";
+		
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				MemberDTO dto = new MemberDTO();
+				dto.setId(rs.getString("id"));
+				dto.setPwd(rs.getString("pwd"));
+				dto.setName(rs.getString("name"));
+				dto.setAddr(rs.getString("addr"));
+				dto.setTel(rs.getString("tel"));
+				list.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 	
 }
