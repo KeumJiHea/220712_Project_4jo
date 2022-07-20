@@ -30,8 +30,7 @@ public class MemberDAO {
 			rs = ps.executeQuery();
 			
 			if(rs.next()) {
-				if(userPwd.equals(rs.getString("pwd"))) {
-				//로그인 성공
+				if(userPwd.equals(rs.getString("pwd"))) {//로그인 성공
 				return 1;
 				}else {
 				//비밀번호 틀림
@@ -64,4 +63,24 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	
+	public String getName(String userId) {
+		String sql = "select name from member where id=?";
+		String name = null;
+		
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				name = rs.getString("name");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return name;
+	}
+	
 }
