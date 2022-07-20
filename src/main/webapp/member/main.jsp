@@ -11,5 +11,6 @@
 	<h1>메인 페이지</h1>
 	${sessionScope.name }님 환영합니다.
 	<input type="button" value="로그아웃" onclick = "location.href='logout.jsp'">
+	<input type="button" value="나의 정보" onclick = "location.href='myInfo.jsp'">
 </body>
 </html>

@@ -83,5 +83,31 @@ public class MemberDAO {
 
 		return name;
 	}
+	
+	public MemberDTO getUser(String name) {
+		MemberDTO dto = null;
+		String sql = "select * from member where name=?";
+		
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, name);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				dto = new MemberDTO();
+				
+				dto.setId(rs.getString("id"));
+				dto.setPwd(rs.getString("pwd"));
+				dto.setName(rs.getString("name"));
+				dto.setAddr(rs.getString("addr"));
+				dto.setTel(rs.getString("tel"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return dto;
+	}
 
 }
