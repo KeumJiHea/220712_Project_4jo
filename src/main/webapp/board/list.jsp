@@ -18,7 +18,8 @@
 <table border="1">
 <tr>
 <th>번호</th> <th>이름 </th> <th>제목 </th> <th>날짜 </th> <th> 조회수</th>
-	<th>group </th> <th>step </th> <th> indent</th> 
+
+<!-- 	<th>group </th> <th>step </th> <th> indent</th>  -->
 </tr>
 <c:choose>
 <c:when test="${list.size()==0 }">
@@ -34,16 +35,17 @@
 
  <td>
  <c:forEach begin="1" end="${dto.indent }">
- <a href="content.jsp?id=${dto.id }"> re: </a> </c:forEach>
+ <a href="content.jsp?id=${dto.id }"> &nbsp; </a> </c:forEach>
 <a href="content.jsp?id=${dto.id }"> ${dto.title }</a>
  </td> 
 
-<td><fmt:formatDate pattern = "yy/MM/dd kk:mm:ss" value="${dto.savedate}"/> </td> 
+<td><fmt:formatDate pattern = "yyyy/MM/dd kk:mm:ss" value="${dto.savedate}"/> </td> 
 <td>${dto.hit } </td>
 
+<!--  
 <td>${dto.idgroup } </td> 
 <td>${dto.step} </td>
- <td>${dto.indent } </td>  
+ <td>${dto.indent } </td>  -->
 </tr>
 </c:forEach>
 </c:otherwise>
@@ -75,11 +77,11 @@
 </c:choose>
 
 <c:forEach var="cnt" begin="1" end="${pc.totEndPage }" step="1">
-		<a href="list.jsp?start=${cnt }">	
-			[${cnt}]  
+		<a href="list.jsp?start=${s}">	
+			[${cnt}] <!-- 현재페이지에 다른 색으로 만들기 -->
 		</a>
 	</c:forEach>
-	
+
 
 <c:choose>
 <c:when test="${s<pc.totEndPage }">
@@ -89,7 +91,7 @@
 	<button disabled>다음</button>
 </c:otherwise>
 </c:choose>
-<!--|${s} / ${pc.totEndPage }|  -->
+<!-- 	|${s} / ${pc.totEndPage }| -->
 <a href="write.jsp">글쓰기</a> </td>
 </tr>
 </table>

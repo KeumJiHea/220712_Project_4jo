@@ -10,7 +10,7 @@ public class DBConnect {
 				DriverManager.getConnection(
 			"jdbc:oracle:thin:@//localhost:1521/xe",
 									"java2","1234");
-		System.out.println("DB_connect");
+		//System.out.println("DB_connect");
 		return con;
 	}
 }

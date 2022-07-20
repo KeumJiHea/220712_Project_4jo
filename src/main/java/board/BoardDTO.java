@@ -13,6 +13,15 @@ public class BoardDTO {
 	private int idgroup;
 	private int step;
 	private int indent;
+	
+	private int good;
+	
+	public int getGood() {
+		return good;
+	}
+	public void setGood(int good) {
+		this.good = good;
+	}
 	public int getId() {
 		return id;
 	}

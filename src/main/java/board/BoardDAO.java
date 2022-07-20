@@ -20,8 +20,8 @@ public BoardDAO(){
 }
 
 public ArrayList<BoardDTO> list(int start,int end){
-	System.out.println("start : "+start);
-	System.out.println("end : "+end);
+	//System.out.println("start : "+start);
+	//System.out.println("end : "+end);
 	ArrayList<BoardDTO> li = new ArrayList<BoardDTO>();
 	if(start==0) { start=1; }
 	//String sql = "select * from board_table order by idgroup desc,step asc";
